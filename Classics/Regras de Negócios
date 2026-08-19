@@ -1,0 +1,29 @@
+QUADRO 3 – Regras de negócio de Plataforma de agendamento de atividades de lazer
+Código
+RN
+Descrição
+RN 01
+Email único global
+O sistema deve garantir que cada endereço de e-mail seja exclusivo para uma única conta no banco de dados. Não é permitido o cadastro de múltiplas contas (seja Perfil Cliente, Empresa ou Administrador) utilizando a mesma credencial de e-mail, garantindo a unicidade da identidade do usuário.
+RN 02
+Empresa precisa ser aprovada
+Somente as empresas (prestadoras de serviço) que possuam o status de cadastro como "APROVADA" pelo Administrador terão permissão no sistema para cadastrar novas atividades, publicá-las no catálogo e receber agendamentos por parte dos clientes.
+RN 03
+Exibição válida de atividades
+Para que uma atividade seja listada nos resultados de busca e visualizada pelos usuários (Visitantes e Clientes), ela deve atender obrigatoriamente a três condições simultâneas: possuir o status "Ativa", conter saldo positivo de vagas disponíveis e estar agendada para uma data e horário no futuro.
+RN 04
+Proibição de datas passadas
+O sistema deve bloquear qualquer tentativa do usuário de buscar, filtrar ou realizar agendamentos de atividades para datas retroativas (anteriores à data atual do sistema), garantindo a consistência das operações.
+RN 05
+Controle de vagas
+O sistema deve impedir a finalização de um agendamento caso a quantidade de vagas solicitada pelo cliente seja superior à quantidade de vagas disponíveis na atividade no momento exato da requisição.
+RN 06
+Controle Anti-Overbooking
+A plataforma proíbe a venda de vagas acima da capacidade máxima estipulada para uma atividade. Em casos onde múltiplos clientes tentam agendar as mesmas últimas vagas disponíveis ao mesmo tempo, a reserva será garantida estritamente ao primeiro cliente que concluir o processo de agendamento, impedindo a superlotação.
+RN 07
+Atualização automática de vagas
+Imediatamente após a confirmação bem-sucedida de uma reserva no sistema, a aplicação deve deduzir automaticamente a quantidade de vagas adquiridas pelo cliente do saldo total de vagas disponíveis da respectiva atividade.
+RN 08
+Garantia de integridade das reservas ativas
+Caso uma atividade já possua agendamentos confirmados, o sistema deve impedir que a Empresa responsável reduza o limite total de vagas para um número inferior à quantidade já reservada. Além disso, alterações críticas (como mudança de data, horário ou local) devem ser restritas ou disparar alertas obrigatórios de notificação aos clientes já confirmados.
+
